@@ -17,6 +17,6 @@ function listViewItemTap(args) {
 }
 exports.listViewItemTap = listViewItemTap;
 function listViewLoadMoreItems(args) {
-    // appViewModel.redditItems.length += appViewModel.redditItems.loadSize;
+    appViewModel.redditItems.length += appViewModel.redditItems.loadSize;
 }
 exports.listViewLoadMoreItems = listViewLoadMoreItems;

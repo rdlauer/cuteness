@@ -33,7 +33,6 @@ var AppViewModel = (function (_super) {
                 this._redditItems = new virtualArray.VirtualArray(1000);
                 this._redditItems.loadSize = 50;
                 this._redditItems.on(virtualArray.VirtualArray.itemsLoadingEvent, function (args) {
-                    console.log(redditUrl + args.count + (after ? "&after=" + after : ""));
                     http.getJSON(redditUrl + args.count + (after ? "&after=" + after : "")).then(function (result) {
                         var itemsToLoad = result.data.children.map(function (i) {
                             return new redditViewModel.RedditViewModel(i.data);
