@@ -11,12 +11,12 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 function listViewItemTap(args) {
     frames.topmost().navigate({
-        moduleName: "app/details-page",
+        moduleName: "details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }
 exports.listViewItemTap = listViewItemTap;
 function listViewLoadMoreItems(args) {
-    appViewModel.redditItems.length += appViewModel.redditItems.loadSize;
+    // appViewModel.redditItems.length += appViewModel.redditItems.loadSize;
 }
 exports.listViewLoadMoreItems = listViewLoadMoreItems;
