@@ -1,4 +1,6 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="pageNavigatedTo">
+  <ActionBar title="{{ title }}"></ActionBar>
+
   <GridLayout rows="*, auto">
     <ScrollView>
       <StackLayout>

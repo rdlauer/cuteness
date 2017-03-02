@@ -1,4 +1,6 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Cuteness"></ActionBar>
+
   <TabView>
     <TabView.items>
      <TabViewItem title="List">
