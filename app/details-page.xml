@@ -1,9 +1,11 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="pageNavigatedTo">
+  <ActionBar title="{{ title }}"></ActionBar>
+
   <GridLayout rows="*, auto">
     <ScrollView>
       <StackLayout>
-        <Image source="{{ imageSource }}" stretch="aspectFill"/>
-        <Label text="{{ title }}" cssClass="detailsTitle" textWrap="true" />
+        <Image src="{{ imageSource }}" stretch="aspectFill"/>
+        <Label text="{{ title }}" class="detailsTitle" textWrap="true" />
       </StackLayout>
     </ScrollView>
     <StackLayout orientation="horizontal" row="1">

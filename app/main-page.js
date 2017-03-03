@@ -11,7 +11,7 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 function listViewItemTap(args) {
     frames.topmost().navigate({
-        moduleName: "app/details-page",
+        moduleName: "details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }

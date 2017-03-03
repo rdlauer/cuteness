@@ -7,8 +7,8 @@ var __extends = this.__extends || function (d, b) {
 var observable = require("data/observable");
 var imageSource = require("image-source");
 var redditAppViewModel = require("./reddit-app-view-model");
-var firstThumbnailImageSource = imageSource.fromFile("~/app/res/first-image.png");
-var defaultImageSource = imageSource.fromFile("~/app/res/reddit-logo-transparent.png");
+var firstThumbnailImageSource = imageSource.fromFile("~/res/first-image.png");
+var defaultImageSource = imageSource.fromFile("~/res/reddit-logo-transparent.png");
 var ISLOADING = "isLoading";
 var THUMBNAIL_IMAGE_SOURCE = "thumbnailImageSource";
 var IMAGE_SOURCE = "imageSource";
@@ -39,7 +39,7 @@ var RedditViewModel = (function (_super) {
         set: function (value) {
             if (this._isLoading !== value) {
                 this._isLoading = value;
-                this.notify({ object: this, eventName: observable.knownEvents.propertyChange, propertyName: ISLOADING, value: value });
+                this.notify({ object: this, eventName: observable.Observable.propertyChangeEvent, propertyName: ISLOADING, value: value });
             }
         },
         enumerable: true,
@@ -67,7 +67,7 @@ var RedditViewModel = (function (_super) {
                                 if (url === key) {
                                     _this.isLoading = false;
                                     _this._thumbnailImageSource = result;
-                                    _this.notify({ object: _this, eventName: observable.knownEvents.propertyChange, propertyName: THUMBNAIL_IMAGE_SOURCE, value: result });
+                                    _this.notify({ object: _this, eventName: observable.Observable.propertyChangeEvent, propertyName: THUMBNAIL_IMAGE_SOURCE, value: result });
                                 }
                             }
                         });
@@ -91,7 +91,7 @@ var RedditViewModel = (function (_super) {
                     this.isLoading = true;
                     imageSource.fromUrl(url).then(function (result) {
                         _this.isLoading = false;
-                        _this.notify({ object: _this, eventName: observable.knownEvents.propertyChange, propertyName: IMAGE_SOURCE, value: result });
+                        _this.notify({ object: _this, eventName: observable.Observable.propertyChangeEvent, propertyName: IMAGE_SOURCE, value: result });
                     });
                 }
             }

@@ -1,3 +1,4 @@
-var application = require("application");
-application.mainModule = "main-page";
-application.start();
+var applicationModule = require("application");
+applicationModule.start({
+  moduleName: "main-page"
+});
